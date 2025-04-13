@@ -1,13 +1,14 @@
-import './App.css'
+import './styles/App.css'
 import ItemListContainer from './components/ItemListContainer'
 import NavBar from './components/NavBar'
+import Footer from './components/Footer'
 
 function App() {
   return (
     <>
-      {/* <h1>Vite + React</h1> */}
       <NavBar />
-      <ItemListContainer />
+      <ItemListContainer message={"Bienvenidos a mi e-commerce"} />
+      <Footer />
     </>
   )
 }

@@ -1,8 +1,14 @@
 import React from 'react'
 
-const ItemListContainer = () => {
+const ItemListContainer = (props) => {
   return (
-    <div>ItemListContainer</div>
+    <main className='min-h-lvh flex items-center justify-center'>
+      <section>
+        <div className='container'>
+          <h1 className='text-center text-5xl'>{props.message}</h1>
+        </div>
+      </section>
+    </main>
   )
 }
 
