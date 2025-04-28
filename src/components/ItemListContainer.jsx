@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import ItemList from './itemList'
+import { getProducts } from '../utilities/getProducts';
+
 
 const ItemListContainer = (props) => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(()=> {
+    // console.log(getProducts(products));
+    getProducts()
+      .then((productsFromPromise) => setProducts(productsFromPromise))
+      .catch((error) => console.log(error))
+  }, []);
+  
   return (
-    <main className='min-h-lvh flex items-center justify-center'>
+    <main className='min-h-lvh'>
       <section>
         <div className='container'>
-          <h1 className='text-center text-5xl'>{props.message}</h1>
+          <h2 className='text-center text-4xl mb-12 font-semibold'>{props.message}</h2>
+          <ItemList products={products} />
         </div>
       </section>
     </main>
