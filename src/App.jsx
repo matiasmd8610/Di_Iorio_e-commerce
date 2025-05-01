@@ -2,18 +2,28 @@ import './styles/App.css'
 import ItemListContainer from './components/ItemListContainer'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './components/Home'
+import ItemDetailContainer from './components/ItemDetailContainer'
+import Contacto from './components/Contacto'
 
 function App() {
   return (
     <>
-      <NavBar />
-      <section className='hero bg-[url("/hero_bg_01.jpg")] min-h-[420px] flex items-center'>
-        <div className='container relative z-20'>
-          <h1 className='text-center text-5xl mb-10 font-semibold text-white mt-20'>Productos de valor</h1>
-        </div>
-      </section>
-      <ItemListContainer message={"Te invitamos a conocer todos nuestros productos"} />
-      <Footer />
+      <BrowserRouter>
+        <NavBar />
+        <main className='min-h-screen'>
+          <Routes>
+            <Route index element={<Home />}></Route>
+            {/* <Route exact path='/nosotros'></Route> */}
+            <Route exact path='/productos' element={<ItemListContainer message={"Te invitamos a conocer todos nuestros productos"} />}></Route>
+            <Route exact path='/productos/:id' element={<ItemDetailContainer />}></Route>
+            <Route exact path='/contacto' element={<Contacto />}></Route>
+          </Routes>
+        </main>
+        {/* <ItemListContainer message={"Te invitamos a conocer todos nuestros productos"} /> */}
+        <Footer />
+      </BrowserRouter>
     </>
   )
 }

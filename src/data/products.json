@@ -5,14 +5,16 @@
         "image": "aceite_oliva_comun.jpg",
         "price": 19.99,
         "description": "Camiseta de algodón 100% en varios colores.",
+        "category": "individual",
         "discount": "20%"
     },
     {
         "id": 2,
         "name": "Berenjenas en escabeche",
-        "image": "aceite_oliva_comun.jpg",
+        "image": "berenjenas_al_escabeche.jpg",
         "price": 49.99,
         "description": "Pantalón de mezclilla azul de corte recto.",
+        "category": "box",
         "discount": "20%"
     },
     {
@@ -21,6 +23,7 @@
         "image": "aceite_oliva_comun.jpg",
         "price": 69.99,
         "description": "Zapatillas cómodas para uso diario o entrenamiento.",
+        "category": "individual",
         "discount": "20%"
     },
     {
@@ -29,6 +32,7 @@
         "image": "aceite_oliva_comun.jpg",
         "price": 129.99,
         "description": "Chaqueta estilo biker de cuero sintético.",
+        "category": "individual",
         "discount": "20%"
     },
     {
@@ -37,6 +41,7 @@
         "image": "aceite_oliva_comun.jpg",
         "price": 129.99,
         "description": "Chaqueta estilo biker de cuero sintético.",
+        "category": "box",
         "discount": ""
     },
     {
@@ -45,6 +50,7 @@
         "image": "aceite_oliva_comun.jpg",
         "price": 129.99,
         "description": "Chaqueta estilo biker de cuero sintético.",
+        "category": "individual",
         "discount": "10%"
     },
     {
@@ -53,6 +59,7 @@
         "image": "aceite_oliva_comun.jpg",
         "price": 129.99,
         "description": "Chaqueta estilo biker de cuero sintético.",
+        "category": "individual",
         "discount": ""
     }
 ]

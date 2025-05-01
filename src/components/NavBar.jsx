@@ -1,6 +1,7 @@
 import React from 'react'
 import CartWidget from './CartWidget'
 import { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 
 const NavBar = () => {
@@ -22,12 +23,28 @@ const NavBar = () => {
     return (
       <header className={`py-2 bg-white ${sticky}`}>
         <div className='container flex justify-between items-center'>
-          <img className='logo transition-all' src='/logo_regionalbox.png' alt='logo' width={180} />
+          <Link to={"/"}><img className='logo transition-all' src='/logo_regionalbox.png' alt='logo' width={180} /></Link>
           <nav className='flex items-center justify-between'>
             <ul className='flex items-center gap-6'>
-              <li><a href='/nosotros' data-name="Nosotros">Nosotros</a></li>
-              <li><a href=''>Productos</a></li>
-              <li><a href='/contact'>Contacto</a></li>
+              <li>
+                <NavLink to='/' className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""}>
+                    Home
+                </NavLink>
+              </li>
+              {/* <li><a href='/nosotros' data-name="Nosotros">Nosotros</a></li> */}
+              <li>
+                <NavLink to='/productos' className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""}>
+                    Productos
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to='/contacto' className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""}>
+                  Contacto
+                </NavLink>
+              </li>
             </ul>
             <CartWidget />
           </nav>

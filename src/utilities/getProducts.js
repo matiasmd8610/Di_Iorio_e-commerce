@@ -59,11 +59,20 @@ import Products from "../data/products.json"
 // ]
 
 export const getProducts = () => {
-    // console.log(Products);
-    
     return new Promise((resolve) => {
         setTimeout(()=> {
           resolve(Products)
-        }, 2000);
+        }, 500);
+    })
+}
+
+export const getSingleProduct = (itemId) => {   
+    // console.log(typeof itemId);
+    return new Promise((resolve) => {
+      setTimeout(()=> {
+        resolve(Products.find((product)=> {
+            return product.id === Number(itemId)
+          }))
+        }, 500);
     })
 }

@@ -51,6 +51,8 @@
     --color-main: #333;
     --color-black: #000;
     --color-whatsapp: #1fca1f;
+    --color-yellow-main: #ffc500;
+    --color-link: #3483fa;
   }
 }
 
@@ -114,7 +116,11 @@ header {
           transition: all .6s ease;
 
           &:hover {
-            transform: rotateX(360deg);
+            /* transform: rotateY(360deg); */
+          }
+
+          &.active {
+            color: var(--color-yellow-main);
           }
         }
       }
@@ -146,11 +152,15 @@ header {
     flex-direction: column;
     overflow: hidden;
     background-color: var(--color-white);
-    cursor: pointer;
+    /* cursor: pointer; */
     transition: all 0.3s ease;
 
     &:hover {
       transform: scale(1.03);
+
+      h3 {
+        color: var(--color-link);
+      }
     }
     
     .product-content {
@@ -160,6 +170,7 @@ header {
         font-size: 1.1rem;
         margin-bottom: 0.5rem;
         font-weight: 600;
+        transition: all 0.3s ease;
       }
     }
   }
