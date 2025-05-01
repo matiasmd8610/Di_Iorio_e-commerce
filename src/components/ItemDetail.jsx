@@ -5,7 +5,8 @@ const ItemDetail = (props) => {
   
   return (
     <div>
-        <p>{props.product.name}</p>
+        <h1 className='mb-4 text-2xl'>{props.product?.name}</h1>
+        <img src={`/products/${props.product?.image}`} alt={props.product?.name} width={500} />
     </div>
   )
 }

@@ -62,7 +62,7 @@ export const getProducts = () => {
     return new Promise((resolve) => {
         setTimeout(()=> {
           resolve(Products)
-        }, 500);
+        }, 1500);
     })
 }
 

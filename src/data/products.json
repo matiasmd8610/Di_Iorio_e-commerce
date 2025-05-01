@@ -20,7 +20,7 @@
     {
         "id": 3,
         "name": "Cebollas caramelizadas",
-        "image": "aceite_oliva_comun.jpg",
+        "image": "cebollas_caramelizadas.webp",
         "price": 69.99,
         "description": "Zapatillas cómodas para uso diario o entrenamiento.",
         "category": "individual",
@@ -38,7 +38,7 @@
     {
         "id": 5,
         "name": "Hummus Ajo",
-        "image": "aceite_oliva_comun.jpg",
+        "image": "humus_ajo.jpg",
         "price": 129.99,
         "description": "Chaqueta estilo biker de cuero sintético.",
         "category": "box",
@@ -47,7 +47,7 @@
     {
         "id": 6,
         "name": "Pickles",
-        "image": "aceite_oliva_comun.jpg",
+        "image": "pickles.webp",
         "price": 129.99,
         "description": "Chaqueta estilo biker de cuero sintético.",
         "category": "individual",
