@@ -1,27 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import ItemList from './itemList'
 import { getProducts } from '../utilities/getProducts';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 
 const ItemListContainer = (props) => {
-  const {categoryId} = useParams();
+  const {category} = useParams();
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
-  console.log(categoryId);
+  // console.log(category);
   
-
   useEffect(()=> {
     // console.log(getProducts(products));
-    getProducts()
+    getProducts(category)
       .then((productsFromPromise) => {
         setProducts(productsFromPromise)
         setLoading(false)
       })
       .catch((error) => console.log(error))
-  }, []);
+  }, [category]);
   
   return (
     <main className='min-h-lvh'>
@@ -29,9 +28,9 @@ const ItemListContainer = (props) => {
         <div className='container'>
           <div className='mb-10'>
             {/* <h3 className='font-semibold text-2xl mb-2'>Categorías</h3> */}
-            <ul className='flex justify-center gap-4'>
-              <li><Link className='rounded-4xl border border-gray-300 py-2 px-5' to={"/productos/categoria/individual"}>Productos Individulaes</Link></li>
-              <li><Link className='rounded-4xl border border-gray-300 py-2 px-5' to={"/productos/categoria/box"}>Cajas</Link></li>
+            <ul className='menuFilters flex justify-center gap-4'>
+              <li><NavLink activeclassname="active" className="rounded-4xl border border-gray-300 py-2 px-5 hover:bg-amber-100" to={"/productos/categoria/individual"}>Productos Individulaes</NavLink></li>
+              <li><NavLink activeclassname="active" className='rounded-4xl border border-gray-300 py-2 px-5 hover:bg-amber-100' to={"/productos/categoria/box"}>Cajas</NavLink></li>
             </ul>
           </div>
           <div>

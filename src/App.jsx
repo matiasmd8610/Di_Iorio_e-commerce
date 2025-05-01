@@ -17,7 +17,7 @@ function App() {
             <Route index element={<Home />}></Route>
             {/* <Route exact path='/nosotros'></Route> */}
             <Route exact path='/productos' element={<ItemListContainer message={"Te invitamos a conocer todos nuestros productos"} />}></Route>
-            <Route exact path='/productos/categoria/:categoryId' element={<ItemListContainer />}></Route>
+            <Route exact path='/productos/categoria/:category' element={<ItemListContainer />}></Route>
             <Route exact path='/productos/:productId' element={<ItemDetailContainer />}></Route>
             <Route exact path='/contacto' element={<Contacto />}></Route>
           </Routes>

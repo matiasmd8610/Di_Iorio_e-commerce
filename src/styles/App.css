@@ -177,6 +177,17 @@ header {
 
 }
 
+.menuFilters {
+  li {
+    a {
+      &.active {
+        background-color: var(--color-yellow-main);
+      }
+    }
+
+  }
+}
+
 @keyframes transitionHeader {
   0% {
       top: -6rem;

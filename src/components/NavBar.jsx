@@ -27,23 +27,14 @@ const NavBar = () => {
           <nav className='flex items-center justify-between'>
             <ul className='flex items-center gap-6'>
               <li>
-                <NavLink to='/' className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""}>
-                    Home
-                </NavLink>
+                <NavLink to='/' activeclassname="active">Home</NavLink>
               </li>
               {/* <li><a href='/nosotros' data-name="Nosotros">Nosotros</a></li> */}
               <li>
-                <NavLink to='/productos' className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""}>
-                    Productos
-                </NavLink>
+                <NavLink to='/productos' activeclassname="active">Productos</NavLink>
               </li>
               <li>
-                <NavLink to='/contacto' className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""}>
-                  Contacto
-                </NavLink>
+                <NavLink to='/contacto' activeclassname="active">Contacto</NavLink>
               </li>
             </ul>
             <CartWidget />

@@ -58,10 +58,18 @@ import Products from "../data/products.json"
 //     }
 // ]
 
-export const getProducts = () => {
+export const getProducts = (category) => {
+  // console.log(category);
+  
     return new Promise((resolve) => {
         setTimeout(()=> {
-          resolve(Products)
+          if (category === undefined) {
+            resolve(Products)
+          } else {
+            resolve(Products.filter((product)=> {
+              return product.category === category
+            }))
+          }
         }, 1500);
     })
 }
