@@ -23,7 +23,7 @@ const ItemListContainer = (props) => {
   }, [category]);
   
   return (
-    <main className='min-h-lvh'>
+    <>
       <section>
         <div className='container'>
           <div className='mb-10'>
@@ -206,7 +206,7 @@ const ItemListContainer = (props) => {
         }
       }
       `}</style>
-    </main>
+    </>
   )
 }
 

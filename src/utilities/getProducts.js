@@ -70,7 +70,7 @@ export const getProducts = (category) => {
               return product.category === category
             }))
           }
-        }, 1500);
+        }, 500);
     })
 }
 

@@ -89,6 +89,25 @@ section {
   padding: 4rem 0;
 }
 
+.btn {
+  cursor: pointer;
+  background-color: var(--color-yellow-main);
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.btn-rounded {
+    padding: 1.5rem;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
 header {
   box-shadow: 0 0 10px 0px #b8b8b8;
 
