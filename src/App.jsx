@@ -8,8 +8,12 @@ import ItemDetailContainer from './components/ItemDetailContainer'
 import Contacto from './components/Contacto'
 import CartProvider from './components/Context/CartContext'
 import Cart from './components/Cart'
+import { createFirebaseApp } from './utilities/configFirebase'
+import Checkout from './components/Checkout'
 
 function App() {
+  createFirebaseApp();
+  
   return (
     <>
       <BrowserRouter>
@@ -24,6 +28,7 @@ function App() {
               <Route exact path='/productos/:productId' element={<ItemDetailContainer />}></Route>
               <Route exact path='/contacto' element={<Contacto />}></Route>
               <Route exact path='/cart' element={<Cart />}></Route>
+              <Route exact path='/checkout' element={<Checkout />}></Route>
             </Routes>
           </main>
           {/* <ItemListContainer message={"Te invitamos a conocer todos nuestros productos"} /> */}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { memo } from 'react'
 import { Link } from 'react-router-dom'
 
 const Item = (props) => {
@@ -22,4 +23,4 @@ const Item = (props) => {
     )
 }
 
-export default Item
+export default memo(Item) 

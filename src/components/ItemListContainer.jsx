@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import ItemList from './itemList'
-import { getProducts } from '../utilities/getProducts';
+// import { getProducts } from '../utilities/getProducts';
 import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import { collection, getFirestore, getDocs, query, where } from 'firebase/firestore';
 
 
 const ItemListContainer = (props) => {
@@ -10,18 +11,39 @@ const ItemListContainer = (props) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // console.log(category);
-  
   useEffect(()=> {
-    // console.log(getProducts(products));
-    getProducts(category)
-      .then((productsFromPromise) => {
-        setProducts(productsFromPromise)
-        setLoading(false)
-      })
-      .catch((error) => console.log(error))
+    // getProducts(category)
+    //   .then((productsFromPromise) => {
+    //     setProducts(productsFromPromise)
+    //     setLoading(false)
+    //   })
+    //   .catch((error) => console.log(error))
+
+    const db = getFirestore();
+    const collectionRef = collection(db, 'products')
+
+    if (category) { //Si estoy en la url de categoria filtro por categoria
+      const queryCollection = query(collectionRef, where('category', '==' , category))
+      getDocs(queryCollection)
+        .then((response)=> {
+          const responseMapped = response.docs.map((doc) => ({...doc.data(), id: doc.id}))
+          setProducts(responseMapped);
+        }).finally(()=> {
+          setLoading(false)
+        }).catch(()=> {
+          console.log("Se produjo un error en la carga de los productos")
+        })
+    } else { //Si estoy en la sección productos muestro todos los productos
+      getDocs(collectionRef)
+        .then((response)=> {
+          const responseMapped = response.docs.map((doc) => ({...doc.data(), id: doc.id}))
+          setProducts(responseMapped);
+        }).finally(()=> {
+          setLoading(false)
+        })
+    }
   }, [category]);
-  
+
   return (
     <>
       <section>

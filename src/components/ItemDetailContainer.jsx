@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail';
-import { getSingleProduct } from '../utilities/getProducts';
+// import { getSingleProduct } from '../utilities/getProducts';
+import { getFirestore, getDoc, doc } from 'firebase/firestore';
 
 
 const ItemDetailContainer = () => {
@@ -10,14 +11,25 @@ const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    getSingleProduct(productId)
-      .then((productFromPromise)=> {
-        setProduct(productFromPromise);
+    // getSingleProduct(productId)
+    //   .then((productFromPromise)=> {
+    //     setProduct(productFromPromise);
+    //     setLoading(false)
+    //   })
+
+    const db = getFirestore();
+    const documentRef = doc(db, "products", productId)
+
+    getDoc(documentRef)
+      .then((response)=> {
+        setProduct({...response.data(), id: response.id})
+      }).finally(()=> {
         setLoading(false)
+      }).catch(()=> {
+        console.log("Se produjo un error en la carga del detalle de producto")
       })
   }, [productId])
 
-  // console.log(product);
 
   if (loading) {
     return (

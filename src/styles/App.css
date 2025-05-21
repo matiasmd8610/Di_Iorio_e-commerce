@@ -52,6 +52,7 @@
     --color-black: #000;
     --color-whatsapp: #1fca1f;
     --color-yellow-main: #ffc500;
+    --color-yellow-secondary: #ffe798;
     --color-link: #3483fa;
   }
 }
@@ -65,7 +66,36 @@
 }
 
 @layer components {
+  .btn {
+    cursor: pointer;
+    background-color: var(--color-yellow-main);
+    border-radius: 0.5rem;
+    padding: .75rem 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 
+    &:hover {
+      background-color: var(--color-yellow-secondary);
+    }
+
+    &.btn-rounded {
+      padding: 1.5rem;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  input {
+    border: 1px solid #999;
+    padding: 0 0.75rem;
+    border-radius: 5px;
+    height: 3rem;
+  }
 }
 
 html {
@@ -87,25 +117,6 @@ h3 {
 
 section {
   padding: 4rem 0;
-}
-
-.btn {
-  cursor: pointer;
-  background-color: var(--color-yellow-main);
-  border-radius: 0.5rem;
-  padding: 1rem 2rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &.btn-rounded {
-    padding: 1.5rem;
-    border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-  }
 }
 
 header {
