@@ -9,7 +9,7 @@ const Home = () => {
             <h1 className='text-center text-5xl mb-10 font-semibold text-white mt-20'>Productos de valor</h1>
         </div>
     </section>
-    <ItemListContainer message={"Conocé nuestras ofertas"} />
+    <ItemListContainer message={"Conocé nuestras ofertas"} onSale={true} />
     </>
   )
 }

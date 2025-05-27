@@ -11,11 +11,11 @@ const Item = (props) => {
                 <figure className='h-60 shrink-0'>
                     <img src={`/products/${props.product.image}`} alt={props.product.name} width={450} height={300} className='w-full object-cover h-full object-top' />
                 </figure>
-                <div className='product-content flex flex-col justify-between h-full'>
+                <div className='product-content flex flex-col'>
                     <h3>{props.product.name}</h3>
-                    <div className='flex justify-between items-center'>
-                        <span>${props.product.price}</span>
-                        <span className='inline-block bg-green-300 px-3 py-1 rounded-2xl text-xs font-semibold uppercase'>30% off</span>
+                    <div className='flex justify-between items-center mt-auto'>
+                        <span className='text-2xl tracking-tight'>${props.product.price}</span>
+                        {props.product.discount > 0 && <span className='inline-block bg-green-300 px-3 py-1 rounded-2xl text-xs font-semibold uppercase'>%{props.product.discount} OFF</span>}
                     </div>
                 </div>
             </Link>

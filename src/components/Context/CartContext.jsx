@@ -1,11 +1,12 @@
+import React from 'react'
 import { createContext, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 export const cartContext = createContext();
 
-import React from 'react'
-
 const CartProvider = ({children}) => {
     const [cart, setCart] = useState([]);
+    const navigate = useNavigate();
     // console.log(cart);
     
     
@@ -14,8 +15,31 @@ const CartProvider = ({children}) => {
         // console.log(quantity);
 
         //Verifico si el producto ya está en cart y agrego la cantidad
-        console.log(product);
-        setCart([...cart, {product: product, quantity: quantity}])
+        // console.log(product);
+        if (cart.length === 0) {
+            setCart([...cart, {product: product, quantity: quantity}])
+            getTotalItemsCart();
+        }
+        // console.log(cart);
+
+        const exist = cart.some(cartProduct => cartProduct.product.id === product.id);
+
+        if (exist) {
+            console.log('El producto ya existe');
+            cart.map((cartProduct) => {
+                if (cartProduct.product.id === product.id) {
+                    cartProduct.quantity = cartProduct.quantity + quantity;
+                }
+            })
+            console.log(cart);
+
+        } else {
+            // setCart([...cart, {product: product, quantity: quantity}])
+            console.log('producto agregado');
+            setCart([...cart, {product: product, quantity: quantity}])
+        }
+        
+        navigate("/cart")
     }
 
     const emptyCart = () => {

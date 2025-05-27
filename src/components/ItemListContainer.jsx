@@ -69,7 +69,7 @@ const ItemListContainer = (props) => {
                 </div>
               </div>
             ) : (
-              <ItemList products={products} />
+              <ItemList products={products} onSale={props.onSale} />
             )}
           </div>
         </div>

@@ -189,12 +189,13 @@ header {
       transform: scale(1.03);
 
       h3 {
-        color: var(--color-link);
+        color: var(--color-yellow-main);
       }
     }
     
     .product-content {
       padding: 1.2rem;
+      height: 8rem;
 
       h3 {
         font-size: 1.1rem;

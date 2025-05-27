@@ -23,7 +23,7 @@ const Cart = () => {
                                 <div className='flex flex-col gap-2'>
                                     <h2 className='mb-4 text-2xl font-semibold'>{cartProduct.product.name}</h2>
                                     <span className='block'><strong>Precio:</strong> ${cartProduct.product.price}</span>
-                                    <span className='block'><strong>Cantidad</strong>:{cartProduct.quantity}</span>
+                                    <span className='block'><strong>Cantidad</strong>: {cartProduct.quantity}</span>
                                     <span className='block'>{cartProduct.product.description}</span>
                                     <button className='btn mt-auto' onClick={() => 
                                         removeCartItem(cartProduct.product.id)}
