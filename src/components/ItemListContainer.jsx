@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ItemList from './itemList'
+import ItemList from './ItemList'
 // import { getProducts } from '../utilities/getProducts';
 import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
