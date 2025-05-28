@@ -31,8 +31,7 @@ const CartProvider = ({children}) => {
                     cartProduct.quantity = cartProduct.quantity + quantity;
                 }
             })
-            console.log(cart);
-
+            // console.log(cart);
         } else {
             // setCart([...cart, {product: product, quantity: quantity}])
             console.log('producto agregado');

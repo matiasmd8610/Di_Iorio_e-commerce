@@ -50,13 +50,13 @@ const ItemListContainer = (props) => {
         <div className='container'>
           <div className='mb-10'>
             {/* <h3 className='font-semibold text-2xl mb-2'>Categorías</h3> */}
+            <h2 className='text-center text-4xl mb-12 font-semibold'>{props.message}</h2>
             <ul className='menuFilters flex justify-center gap-4'>
               <li><NavLink activeclassname="active" className="rounded-4xl border border-gray-300 py-2 px-5 hover:bg-amber-100" to={"/productos/categoria/individual"}>Productos Individulaes</NavLink></li>
               <li><NavLink activeclassname="active" className='rounded-4xl border border-gray-300 py-2 px-5 hover:bg-amber-100' to={"/productos/categoria/box"}>Cajas</NavLink></li>
             </ul>
           </div>
           <div>
-            <h2 className='text-center text-4xl mb-12 font-semibold'>{props.message}</h2>
             {loading ? (
               <div className='flex justify-center py-16'>
                 <div className="🤚">
