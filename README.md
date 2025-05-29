@@ -1,5 +1,6 @@
 # RegionalBox
-RegionalBox es un e-commerce de productos regionales, desarrollado para la cursada de React JS de Coderhouse.
+RegionalBox es un e-commerce de productos regionales, desarrollado para la cursada de React JS de Coderhouse. 
+Entre sus funcionalidades principales se encuentran el catálogo de productos con filtros por categoría, vista de detalle de producto, armado del carrito de compra y creación una orden de compra al finalizar la misma.
 
 ## Git repository
 https://github.com/matiasmd8610/Di_Iorio_e-commerce.git
