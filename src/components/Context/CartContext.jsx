@@ -8,6 +8,14 @@ const CartProvider = ({children}) => {
     const [cart, setCart] = useState([]);
     const navigate = useNavigate();
     // console.log(cart);
+
+    function formatMoney(value) {
+        return new Intl.NumberFormat('es-AR', {
+            style: 'currency',
+            currency: 'ARS',
+            minimumFractionDigits: 2
+        }).format(value);
+    }
     
     
     const onAdd = (product, quantity) => {
@@ -56,7 +64,7 @@ const CartProvider = ({children}) => {
         cart.forEach((cartProduct) => {
             totalPrice = totalPrice + cartProduct.product.price * cartProduct.quantity;
         })
-        return totalPrice;
+        return formatMoney(totalPrice);
     }
 
     const getTotalItemsCart = () => {

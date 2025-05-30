@@ -12,7 +12,7 @@ const Cart = () => {
                 <span>No hay productos en el carrito</span>
             ) : (
                 <div>
-                    <span className='block text-3xl mb-5'>Tu total es de: ${getTotalPrice()} </span>
+                    <span className='block text-3xl mb-5'>Tu total es de: {getTotalPrice()} </span>
                     <button className='btn mb-10' onClick={emptyCart}>
                         Vaciar carrito
                     </button>

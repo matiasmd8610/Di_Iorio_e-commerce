@@ -1,4 +1,4 @@
-import { addDoc, collection, getFirestore, serverTimestamp } from 'firebase/firestore'
+import { addDoc, collection, getFirestore, serverTimestamp, updateDoc, doc } from 'firebase/firestore'
 import React, { useContext, useRef, useState } from 'react'
 import { cartContext } from './Context/CartContext'
 import { useNavigate } from 'react-router-dom'
@@ -42,6 +42,13 @@ const Checkout = () => {
                         icon: "success",
                         draggable: true
                     });
+                    
+                    //Actualizo el stock de los productos que compró el usuario
+                    cart.forEach((cartProduct)=> {
+                        const docRef = doc(db, 'products', cartProduct.product.id)
+                        updateDoc(docRef, {stock: cartProduct.product.stock - cartProduct.quantity})
+                    })
+
                     emptyCart()
                     navigate("/")
                 })

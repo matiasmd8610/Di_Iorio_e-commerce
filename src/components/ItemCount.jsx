@@ -6,13 +6,16 @@ const ItemCount = ({product}) => {
     const {onAdd} = useContext(cartContext);
 
     const add = () => {
-        setCounter(counter + 1);
+        if (counter < product.stock) {
+            setCounter(counter + 1);
+        }
         // console.log(counter);
-        
     }
 
     const substract = () => {
-        setCounter(counter - 1);
+        if (counter > 0) {
+            setCounter(counter - 1);
+        }
     }
 
     return (
